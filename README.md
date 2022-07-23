@@ -1,6 +1,14 @@
 <h1><center>Tensorflow 2 Tutorial</center></h1>
 
-<center><img src="./TF_logo.png" /></center>
+<div align="center">
+    <img src="TF_logo.png" width="200"/>
+    <div>
+    Tensorflow 2 Toturial
+    </div>
+
+[![license](https://img.shields.io/github/license/open-mmlab/mmclassification.svg)](https://github.com/open-mmlab/mmclassification/blob/master/LICENSE)
+
+</div>
 
 ## Tensorflow 2 简介
 
