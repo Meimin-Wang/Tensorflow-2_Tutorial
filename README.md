@@ -4,9 +4,8 @@
 
 <div align="center">
     <div color="#EF7731">
-    Tensorflow 2指东南西北
+    <h3>Tensorflow 2指东南西北</h3>
     </div>
-
 [![license](https://img.shields.io/github/license/open-mmlab/mmclassification.svg)](https://github.com/open-mmlab/mmclassification/blob/master/LICENSE)
 
 </div>
