@@ -208,7 +208,7 @@ x = tf.constant([1, 2, 3])
 
 张量的操作就是计算图中的节点。这里主要总结一些著名的，常用的一些操作。
 
-![](/Volumes/BlessedWMM/my-git/Tensorflow-2_Tutorial/resources/op.png)
+![](../resources/op.png)
 
 张量的操作非常多，弃用有一类就是element-wise操作，就是对张量中的每个元素进行操作，有一元操作，二元操作和多元操作，可以用如下公式描述
 $$
@@ -472,7 +472,7 @@ Tensor中有一个非常关键的属性，就是**形状（shape）**，在内�
 
 首先关注下张量中轴的概念：
 
-![](/Volumes/BlessedWMM/my-git/Tensorflow-2_Tutorial/resources/axis.png)
+![](../resources/axis.png)
 
 ```python
 import tensorflow as tf
@@ -541,7 +541,7 @@ shape: TensorShape([2, 2]) rank: 2 size: 4
 
 - `tf.repeat`：重复张量沿着某个轴（axis）
 
-  ![](/Volumes/BlessedWMM/my-git/Tensorflow-2_Tutorial/repeat.png)
+  ![](../resources/repeat.png)
 
   ```python
   import tensorflow as tf
@@ -573,7 +573,7 @@ shape: TensorShape([2, 2]) rank: 2 size: 4
 
 - 张量连接`tf.concat`
 
-  ![](/Volumes/BlessedWMM/my-git/Tensorflow-2_Tutorial/resources/concat.png)
+  ![](../resources/concat.png)
 
   ```python
   import tensorflow as tf
@@ -888,7 +888,7 @@ Tensorflow中有两个重要的函数：
 
 当两个**维度不同的**张量进行运算时候，会发生广播（自动扩展），其原理非常简单，如下图所示：
 
-![](/Volumes/BlessedWMM/my-git/Tensorflow-2_Tutorial/resources/broadcast.png)
+![](../resources/broadcast.png)
 
 ```python
 import tensorflow as tf
@@ -981,7 +981,7 @@ private:
 
 简单说就是一个数组表示形状，一个数据指针真正的取存取数据。由于只有一个数据指针，那么如果对于一个矩阵来说，我们需要取得第`i`行和第`j`列的话，需要映射成为数据指针的偏移量，然而当取更多的数据的时候，需要不止一个偏移量了，此时诞生了一个新的概念——**视图（View）**，这也是非常普遍的一种设计思路。
 
-![](/Volumes/BlessedWMM/my-git/Tensorflow-2_Tutorial/resources/TensorBuff.png)
+![](../resources/TensorBuff.png)
 
 `TensorBuffer`是`RefCounted`的子类，其成员为：
 
