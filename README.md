@@ -1,13 +1,11 @@
 <h1><center>Tensorflow 2 Tutorial</center></h1>
 <center><img src="./TF_logo.png" /></center>
 
-
 <div align="center">
     <div color="#EF7731">
-    <h3>Tensorflow 2指东南西北</h3>
+    Tensorflow 2指东南西北
     </div>
-[![license](https://img.shields.io/github/license/open-mmlab/mmclassification.svg)](https://github.com/open-mmlab/mmclassification/blob/master/LICENSE)
-
+    <img src="resources/apache.svg"/>
 </div>
 
 ## Tensorflow 2 简介
