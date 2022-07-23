@@ -1,7 +1,8 @@
 <h1><center>Tensorflow 2 Tutorial</center></h1>
+<center><img src="./TF_logo.png" /></center>
+
 
 <div align="center">
-    <img src="TF_logo.png" width="200"/>
     <div>
     Tensorflow 2 Toturial
     </div>
