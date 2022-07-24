@@ -1,5 +1,7 @@
 ## 1. Tensor
 
+![](../resources/ch1_cover.png)
+
 Tensor是各个深度学习框架中的核心数据结构，它用来表示高维数组。
 
 ### 1.1 张量创建
