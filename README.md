@@ -94,4 +94,6 @@ TODO：张量视频
 
 [第二章：数据集（Datasets）](https://github.com/Meimin-Wang/Tensorflow-2_Tutorial/tree/main/第二章%20数据集（Datasets）)
 
+![](./resources/ch2_cover.png)
+
 第三章：神经网络（Neural Network）
