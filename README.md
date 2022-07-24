@@ -26,6 +26,39 @@ TensorFlow目前主要使用的是两个版本，分别是1.x和2.x。除了Tens
 
 以上是使用范围比较广或比较新的深度学习工具和框架，还有其他小众的一些工具比如DarkNet没有列在其中。上图中第一张图和第二张图分别是TF1和TF2，他们有非常大的差别。
 
+### Tensorflow安装
+
+GPU版本安装
+
+```shell
+pip install tensorflow-gpu
+```
+
+安装GPU版本必须保证您的机器需要有NVIDIA显卡驱动，可以使用
+
+```shell
+nvidia-smi
+```
+
+进行测试。除此之外，需要安装和配置CUDA和CUDnn，若您使用最新版本的Tensorflow，可以安装最新的CUDA和CUDnn版本。安装完成之后，可以使用
+
+```python
+import tensorflow as tf
+print(tf.test.is_gpu_available())
+```
+
+方式测试。当打印`True`后，表明您的CUDA环境是没有问题的，若返回`False`，可以通过日志查看是缺少了哪些库（`.so`或`.dll`），并重新安装对应版本即可。
+
+
+
+CPU版本
+
+```shell
+pip install tensorflow-cpu
+```
+
+在学习之初，CPU版本的TensorFlow就可以满足需求了。
+
 ## 目录（Contents）
 
 [第一章：张量（Tensor）](https://github.com/Meimin-Wang/Tensorflow-2_Tutorial/blob/main/第一章%20张量（Tensor）/README.md)
