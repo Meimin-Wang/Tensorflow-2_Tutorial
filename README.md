@@ -30,7 +30,24 @@ TensorFlow目前主要使用的是两个版本，分别是1.x和2.x。除了Tens
 
 目前另外一大深度学习框架就是Pytorch，它早起是使用Lua语言编写的，由于Lua的小众，Facebook并没有很好的推广。Pytorch的后台也是使用C++编写的，就是Caffe2，结合C++的性能和Python友好接口，成为了目前非常流行的深度学习框架。Pytorch适合实验室和科研开发，而且业发展出了很多优秀的周边社区，比如Pytorch Lighting，OpenMMLab等。
 
+Deeplearning4j是一个Java的深度学习框架，通过Scala语言实现的Spark大数据处理框架结合使用。
+
 在国内，目前华为的Mindspore和百度的PaddlePaddle是冉冉升起的新深度学习框架，并结合了各自的硬件平台，非常具有发展前景，但是目前仍然处于初步探索阶段。
+
+### 前置知识
+
+本教程虽然是指南，但是主要针对于全面的TF 2 API进行梳理和使用练习，因此需要伙伴们有一点前置知识：
+
+1. Python编程语言：TF的接口主要使用Python作为前端，面向开发者的，所以需要大家比较熟悉Python编程语言。具体地，您需要掌握几乎所有的语法和各种内置的一些库，面向对象，函数式编程思想等。比如`os`，`glob`，`time`，`sys`等。
+2. Python的一些第三方库：除了Python的内置的库外，还需要掌握一些第三方库，包括但不限于
+   - Numpy：Numpy在机器学习和科学计算中的地位不言而喻，很多其他语言的不友好的根源有的时候就是因为没有统一的，深入人心的多维数组和线性代数等API接口。
+   - Matplotlib：一个MATLAB中绘图模块的逆向工程，该库可以可视化几乎所有的图表，也是非常重要的科学计算工具。
+   - Scikit-Learn：一个机器学习框架，智能使用CPU，但是其API设计和相关模块算法非常具有权威，学习了Scikit-Learn后，很多其他的库学习起来就非常的简单。
+   - Pandas：Pandas是处理结构化数据的有力工具，在处理结构化数据处理方面比Numpy要强大地多。在深度学习领域用的不是特别多，但是有些地方还不能被代替。
+   - OpenCV：图像处理和图像识别是入门深度学习和掌握深度学习的必经之路，所以图像处理库OpenCV非常的具有影响力，它有C++版本和Python版本，非常的容易上手，但是需要了解很多图像的算法。
+   - ...
+3. 数学知识：机器学习，包括蛇毒学习多多少少还是需要一些数学知识的，包括微积分、概率论等。
+4. 数字图像处理：对于冈萨雷斯的《数字图像处理》的前4章有一定的认识。
 
 ### Tensorflow安装
 
@@ -69,7 +86,11 @@ pip install tensorflow-cpu
 
 [第一章：张量（Tensor）](https://github.com/Meimin-Wang/Tensorflow-2_Tutorial/blob/main/第一章%20张量（Tensor）/README.md)
 
-![](resources/ch1_cover.png)
+![CH-1_cover](resources/ch1_cover.png)
+
+张量是一种数据容器，它和Numpy中的ndarray，Python中的list的角色比较类似。受限于TF的独特应用场景和运行环境，TF中的张量与Numpy中的多维数组略有不同。
+
+TODO：张量视频
 
 [第二章：数据集（Datasets）](https://github.com/Meimin-Wang/Tensorflow-2_Tutorial/tree/main/第二章%20数据集（Datasets）)
 
