@@ -62,7 +62,7 @@ TF datasets数据集列表：https://www.tensorflow.org/datasets/catalog/overvie
 
 数据集的一般处理流程如下：
 
-![](/Volumes/BlessedWMM/my-git/Tensorflow-2_Tutorial/resources/数据集处理.png)
+![](../resources/数据集处理.png)
 
 数据集本质上或者面向开发着应该呈现出一个迭代器（或生成器）的表现，而TF提供了一系列类似于大数据处理流水线的API，包括`map`和`reduce`操作。在经过处理后，我们可以通过以下方式进行遍历数据集：
 

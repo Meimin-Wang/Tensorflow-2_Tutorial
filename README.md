@@ -2,7 +2,7 @@
 <center><img src="./TF_logo.png" /></center>
 
 <div align="center">
-    <div color="#EF7731">
+    <div style="color: #EF7731;">
     	<h3>
         	Tensorflow 2指东南西北
         </h3>
