@@ -117,7 +117,7 @@ print(list(ds.as_numpy_iterator()))
 [1045308610, 3793825633, 553251631, 1110334695, 3223716891, 1246776994, 3830302915, 4030266722, 1304307785, 3566296323]
 ```
 
-#### 3.2.2 数据变换（中间算子）
+#### 3.2.2 数据变换
 
 数据集流水线上进行数据变换，比如文件读取，归一化，数据增强，数据拼接，过滤等操作。中间算子指的是调用这些函数后会得到一个新的数据集。
 
@@ -201,3 +201,77 @@ print(list(ds.as_numpy_iterator()))
 - `batch`：将数据集变为批数据集(`BatchDataset`）
 
 - ...
+
+### 2.3 数据集实践
+
+#### 2.3.1 图像分类数据集
+
+图片分类数据集中的数据和标签分别为：
+
+- 图片
+- 类别
+
+这里采用dogs-vs-cats Kaggle Challenge作为测试数据，如下图：
+
+<table>
+    <thead>
+    	<tr>
+            <td align="center"></td></td>
+        	<td align="center">Dog</td> <td align="center">Cat</td>
+        </tr>
+    </thead>
+    <tbody>
+    	<tr>
+            <td valign="center">图片</td>
+        	<td align="center">
+            	<img src="../resources/dog.jpg" width="400px" />
+            </td>
+            <td align="center">
+            	<img src="../resources/cat.jpg" width="400px" />
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+通常，准备图片分类的数据集有两种方式：
+
+1. 第一种：将不同类别的图像存在不同的文件夹下，文件夹的名称就是类别名字；
+
+   ```shell
+   ├── data_1
+   │   ├── cat
+   │   │   ├── cat.5339.jpg
+   │   │   ├── cat.5340.jpg
+   │   │   ├── cat.5341.jpg
+   │   │   ├── cat.5342.jpg
+   │   │   └── cat.5343.jpg
+   │   └── dog
+   │       ├── dog.8459.jpg
+   │       ├── dog.8460.jpg
+   │       ├── dog.8461.jpg
+   │       ├── dog.8462.jpg
+   │       └── dog.8463.jpg
+   ```
+
+2. 第二种：将所有的图片存储在一个特定的文件夹，此外需要提供一个`anno.txt`文件，其中每一行都需要制定图片路径和类别编号。
+
+   ```shell
+   ├── data_2
+   │   ├── anno.txt
+   │   ├── cat.5339.jpg
+   │   ├── cat.5340.jpg
+   │   ├── cat.5341.jpg
+   │   ├── cat.5342.jpg
+   │   ├── cat.5343.jpg
+   │   ├── dog.8459.jpg
+   │   ├── dog.8460.jpg
+   │   ├── dog.8461.jpg
+   │   ├── dog.8462.jpg
+   │   └── dog.8463.jpg
+   ```
+
+3. 其他的一些组织方式，但是和第一种方式和第二种方式是大同小异的。
+
+通常处理这些数据的流程是：
+
+1. **读取文件文件名**：无论是第一种还是第二种方式，我们都需要首先找出所有的图片，这里可能图片的格式的多样的，可能分散在不同的文件夹中，是需要通过Python进行采集
