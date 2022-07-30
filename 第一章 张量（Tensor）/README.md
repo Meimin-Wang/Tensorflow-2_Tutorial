@@ -2,7 +2,11 @@
 
 ![](../resources/ch1_cover.png)
 
-Tensor是各个深度学习框架中的核心数据结构，它用来表示高维数组。
+Tensor是各个深度学习框架中的核心数据结构，它用来表示高维数组。关于数据存储，Python、Numpy和TensorFlow都拥有他们各自不同的数据容器（Data Container）。
+
+![](../resources/container.png)
+
+在Python中，存储数据可以使用`list`，`tuple`和`dict`基本数据容器，以此还产生了许多的衍生数据结构。而在Numpy中，核心的数据结构就是`ndarray`，是一个多维数组，它和Python的数据容器的最大的区别就是需要存储同一种类型的数据，而不是像`list`那样可以存放各种数据类型的数据。
 
 ### 1.1 张量创建
 
@@ -205,6 +209,12 @@ x = tf.constant([1, 2, 3])
 - 边（Edge）：边可以看作是数据（当然不仅仅是数据，还有控制流）
 
 计算图（Computational Graph）又是一种特殊的数据流图（Data Flow Graph），而这个数据就是张量（Tensor），所以这个框架的名字叫做TensorFlow。作为一个有向图，节点自然有入边和出边了，可以看作是函数的输入和输出，而多个节点也构成了一个新的图，就是子图，一个子图也有输入边和输出边，慢慢就汇聚成了一个大的计算图。
+
+Python的数据容器、Numpy的数据容器和TenorFlow的数据容器可以相互转化：
+
+![](../resources/convert_container.png)
+
+
 
 ### 1.2 张量的操作
 
