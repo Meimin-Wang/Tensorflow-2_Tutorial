@@ -34,6 +34,12 @@ Deeplearning4j是一个Java的深度学习框架，通过Scala语言实现的Spa
 
 在国内，目前华为的Mindspore和百度的PaddlePaddle是冉冉升起的新深度学习框架，并结合了各自的硬件平台，非常具有发展前景，但是目前仍然处于初步探索阶段。
 
+对于纷繁复杂的深度学习工具的选择，可以参考Google Trend的报告：
+
+<center><img src="./resources/dl_toolkits_trend.png"/></center>
+
+<center><img src="./resources/dl_toolkits_line_trend.png"/></center>
+
 ### 前置知识
 
 本教程虽然是指南，但是主要针对于全面的TF 2 API进行梳理和使用练习，因此需要伙伴们有一点前置知识：
