@@ -86,7 +86,7 @@ pip install tensorflow-cpu
 
 [第一章：张量（Tensor）](https://github.com/Meimin-Wang/Tensorflow-2_Tutorial/blob/main/第一章%20张量（Tensor）/README.md)
 
-![CH-1_cover](resources/ch1_cover.png)
+![CH-1_cover](./resources/ch1_cover.png)
 
 张量是一种数据容器，它和Numpy中的ndarray，Python中的list的角色比较类似。受限于TF的独特应用场景和运行环境，TF中的张量与Numpy中的多维数组略有不同。
 
@@ -97,3 +97,6 @@ TODO：张量视频
 ![](./resources/ch2_cover.png)
 
 第三章：神经网络（Neural Network）
+
+![](./resources/ch3_cover.png)
+
