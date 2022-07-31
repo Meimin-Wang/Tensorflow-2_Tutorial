@@ -1,6 +1,8 @@
-## 1. Tensor
+## 1. 张量（Tensor）
 
 ![](../resources/ch1_cover.png)
+
+[TOC]
 
 Tensor是各个深度学习框架中的核心数据结构，它用来表示高维数组。关于数据存储，Python、Numpy和TensorFlow都拥有他们各自不同的数据容器（Data Container）。
 
@@ -75,12 +77,12 @@ Tensor是各个深度学习框架中的核心数据结构，它用来表示高�
 
 - 创建特殊的张量
 
-  1. `def ones(shape, dtype=dtypes.float32, name=None)`
-  2. `def zeros(shape, dtype=dtypes.float32, name=None)`
-  3. `def fill(dims, value, name=None)`
-  4. `def eye(num_rows, num_columns=None, batch_shape=None, dtype=dtypes.float32, name=None)`
-  5. `def linspace_nd(start, stop, num, name=None, axis=0)`
-  6. `def range(start, limit=None, delta=1, dtype=None, name="range")`
+  1. `def ones(shape, dtype=dtypes.float32, name=None)`：全1张量
+  2. `def zeros(shape, dtype=dtypes.float32, name=None)`：全0张量
+  3. `def fill(dims, value, name=None)`：填充一个所有值为`value`的张量
+  4. `def eye(num_rows, num_columns=None, batch_shape=None, dtype=dtypes.float32, name=None)`：单位张量，即$a_{ii\cdots i}=1, i=min(dims)$
+  5. `def linspace_nd(start, stop, num, name=None, axis=0)`：在区间$[start, stop]$上取得$num$个等分点
+  6. `def range(start, limit=None, delta=1, dtype=None, name="range")`：和Python中的`range`函数一样，该函数返回的是张量
 
   例如：
 
@@ -129,7 +131,7 @@ Tensor是各个深度学习框架中的核心数据结构，它用来表示高�
    96 98], shape=(50,), dtype=int32)
   ```
 
-- 复制张量`xxx_like`
+- 复制张量`xxx_like`：诸如`zeros_like`，`ones_like`，`fill_like`等可以仿照给定张量的形状进行创建新的张量
 
 - 随机张量，在`tf.random`模块下
 
