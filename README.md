@@ -68,16 +68,95 @@ pip install tensorflow-gpu
 ```shell
 nvidia-smi
 ```
+输出：
+```shell
+Thu Oct 13 19:07:19 2022
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 470.63.01    Driver Version: 470.63.01    CUDA Version: 11.4     |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|                               |                      |               MIG M. |
+|===============================+======================+======================|
+|   0  NVIDIA GeForce ...  Off  | 00000000:1A:00.0 Off |                  N/A |
+| 26%   40C    P0    46W / 215W |      0MiB /  7982MiB |      0%      Default |
+|                               |                      |                  N/A |
++-------------------------------+----------------------+----------------------+
+|   1  NVIDIA GeForce ...  Off  | 00000000:1B:00.0 Off |                  N/A |
+| 28%   41C    P0    45W / 215W |      0MiB /  7982MiB |      0%      Default |
+|                               |                      |                  N/A |
++-------------------------------+----------------------+----------------------+
+|   2  NVIDIA GeForce ...  Off  | 00000000:3D:00.0 Off |                  N/A |
+| 30%   36C    P0    48W / 215W |      0MiB /  7982MiB |      0%      Default |
+|                               |                      |                  N/A |
++-------------------------------+----------------------+----------------------+
+|   3  NVIDIA GeForce ...  Off  | 00000000:3E:00.0 Off |                  N/A |
+| 28%   37C    P0    43W / 215W |      0MiB /  7982MiB |      0%      Default |
+|                               |                      |                  N/A |
++-------------------------------+----------------------+----------------------+
+|   4  NVIDIA GeForce ...  Off  | 00000000:88:00.0 Off |                  N/A |
+| 19%   37C    P0    41W / 215W |      0MiB /  7982MiB |      0%      Default |
+|                               |                      |                  N/A |
++-------------------------------+----------------------+----------------------+
+|   5  NVIDIA GeForce ...  Off  | 00000000:89:00.0 Off |                  N/A |
+| 23%   38C    P0    45W / 215W |      0MiB /  7982MiB |      1%      Default |
+|                               |                      |                  N/A |
++-------------------------------+----------------------+----------------------+
+|   6  NVIDIA GeForce ...  Off  | 00000000:B1:00.0 Off |                  N/A |
+| 29%   41C    P0    47W / 215W |      0MiB /  7982MiB |      1%      Default |
+|                               |                      |                  N/A |
++-------------------------------+----------------------+----------------------+
+|   7  NVIDIA GeForce ...  Off  | 00000000:B2:00.0 Off |                  N/A |
+| 38%   40C    P0    45W / 215W |      0MiB /  7982MiB |      0%      Default |
+|                               |                      |                  N/A |
++-------------------------------+----------------------+----------------------+
 
-进行测试。除此之外，需要安装和配置CUDA和CUDnn，若您使用最新版本的Tensorflow，可以安装最新的CUDA和CUDnn版本。安装完成之后，可以使用
++-----------------------------------------------------------------------------+
+| Processes:                                                                  |
+|  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
+|        ID   ID                                                   Usage      |
+|=============================================================================|
+|  No running processes found                                                 |
++-----------------------------------------------------------------------------+
+```
 
+进行测试。除此之外，需要安装和配置CUDA和CUDnn，若您使用最新版本的Tensorflow，可以安装最新的CUDA和CUDnn版本。
+
+如果安装的是开发版本的CUDA，可以查看
+```shell
+nvcc -V
+```
+输出：
+```shell
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2021 NVIDIA Corporation
+Built on Mon_May__3_19:15:13_PDT_2021
+Cuda compilation tools, release 11.3, V11.3.109
+Build cuda_11.3.r11.3/compiler.29920130_0
+```
+
+安装完成之后，可以使用
 ```python
 import tensorflow as tf
 print(tf.test.is_gpu_available())
 ```
 
 方式测试。当打印`True`后，表明您的CUDA环境是没有问题的，若返回`False`，可以通过日志查看是缺少了哪些库（`.so`或`.dll`），并重新安装对应版本即可。
-
+输出：
+```shell
+Instructions for updating:
+Use `tf.config.list_physical_devices('GPU')` instead.
+2022-10-13 19:11:42.061053: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 AVX512F AVX512_VNNI FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2022-10-13 19:11:55.224283: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1532] Created device /device:GPU:0 with 6658 MB memory:  -> device: 0, name: NVIDIA GeForce RTX 2080, pci bus id: 0000:1a:00.0, compute capability: 7.5
+2022-10-13 19:11:55.227992: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1532] Created device /device:GPU:1 with 6658 MB memory:  -> device: 1, name: NVIDIA GeForce RTX 2080, pci bus id: 0000:1b:00.0, compute capability: 7.5
+2022-10-13 19:11:55.229896: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1532] Created device /device:GPU:2 with 6658 MB memory:  -> device: 2, name: NVIDIA GeForce RTX 2080, pci bus id: 0000:3d:00.0, compute capability: 7.5
+2022-10-13 19:11:55.231462: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1532] Created device /device:GPU:3 with 6658 MB memory:  -> device: 3, name: NVIDIA GeForce RTX 2080, pci bus id: 0000:3e:00.0, compute capability: 7.5
+2022-10-13 19:11:55.233386: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1532] Created device /device:GPU:4 with 6658 MB memory:  -> device: 4, name: NVIDIA GeForce RTX 2080, pci bus id: 0000:88:00.0, compute capability: 7.5
+2022-10-13 19:11:55.235296: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1532] Created device /device:GPU:5 with 6658 MB memory:  -> device: 5, name: NVIDIA GeForce RTX 2080, pci bus id: 0000:89:00.0, compute capability: 7.5
+2022-10-13 19:11:55.236767: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1532] Created device /device:GPU:6 with 6658 MB memory:  -> device: 6, name: NVIDIA GeForce RTX 2080, pci bus id: 0000:b1:00.0, compute capability: 7.5
+2022-10-13 19:11:55.238678: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1532] Created device /device:GPU:7 with 6658 MB memory:  -> device: 7, name: NVIDIA GeForce RTX 2080, pci bus id: 0000:b2:00.0, compute capability: 7.5
+```
 
 
 CPU版本
